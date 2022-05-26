@@ -112,6 +112,59 @@ This is usually not very useful during modeling. But can be very useful during h
 **Business Value:**
 Insights like these can help  business owners reinvent the aspect of customer relationship.
   
+<a id='features'></a>
+## Features that constitute the solution
+  
+**Features for Patrons:**
+1) Every user in the system will be provided with the recommendations from the hybrid engine.
+2) The users will also be able to locate these recommendations on the map to filter further based on the location.
+3) The users will also be provided with insights such as best rated restaurants, dishes to avoid etc.
+4) A new user who has currently logged into the system will be provided the top 10 trending restaurants nearby based on their coordinates.
+
+ **Features for the business owners:**
+1) The business owners will also be provided with insights such as most valuable patrons, their current rating and reviews.
+2) What is doing well and what people are not satisfied about, using the sentiment analysis technique.
+  
+<a id='algo'></a>
+
+## Algorithms Used
+%%%%%%%%%Under Construction%%%%%%%%%%
+  
+ <a id='results'></a> 
+ ## Results
+
+ **Set of 10 recommendations for the user_id "mNCd6ctHcY0ueistbprTwg" using the ALS model**
+  
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/recusingALS.png" width = 700><p>
+   
+ **The Table containing the predictions of ratings made for all users, business combination in the test set**
+ 
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/table.png" width = 700><p>
+     
+ **Table containing the Top 10 Restaurant recommendations for the same User but using Cosine Similarity**
+   
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/cosinerec.png" width = 700><p>
+   
+ **Sentiment Analysis - Table showing trigrams of the text**
+   
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/trigrams.png" width = 700><p>
+   
+ **Sentiment Analysis - trigrams with svm coefficients (weights)**
+   
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/svmcoeff.png" width = 700><p>
+   
+ **Sentiment Analysis - Positive and Negative word clouds**
+   
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/wordcloud.png" width = 700><p>  
+   
+   
+   
+   
+   
+   
+  
+  
+  
   
   
 
