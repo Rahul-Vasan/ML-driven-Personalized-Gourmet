@@ -54,6 +54,74 @@ Below are the Schemas of the JSON structure of each of the dataset that I have p
 ## Solution Architecture
   
 <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/architecture.png" width = 700><p>  
+
+1) Data Retrieval - Python API programming from the Yelp API endpoint.
+2) Business logic - Pyspark SQL, Pyspark MLlib, Pandas,Pymongo.
+3) Storage mechanisms - MongoDB Atlas Cloud, HDFS.
+4) Data visualization - Matplotlib, Seaborn, Recmetrics, Folium, Wordcloud.
+5) Hyper Parameter Tuning - Pyspark Grid Search feature.
+  
+<a id='EDA'></a>
+## Data Exploration
+  
+Let’s start with some basic yet useful data exploration and see what business value they can add. We will start of with,
+1) The distribution of ratings in a particular city
+2) The long tail plot
+3) Most active users of the system
+4) The restaurants with most customer traffic
+5) The most valuable patrons of a particular restaurant
+6) Categories of dishes to avoid in the city
+  
+**Distribution of Ratings in a particular city**
+
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/Ratings%20distribution'.png" width = 700><p>
+  
+Ratings are a good calibration of the quality of a restaurant. The ratings distribution for each city can improve the confidence of people who are looking to move to the city and tourists as well. 
+  
+**Long Tail Plot**
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/longtailplot.png" width = 700><p>
+  
+The long tail plot is often underestimated and can be very useful for recommender systems.
+It indicates that most of the customer traffic is centralized to the most popular restaurants in the city. 
+
+**Business value:**
+
+While recommending we should be wary of the fact that users already know these restaurants and are expecting to try something new. Recommendations that avoid these restaurants can be more personalized and clever. 
+It can also improve the business of “New to the Market” restaurants.
+  
+**Most Active Users of the System**
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/top_10_reviewers_byreviews.png" width = 700><p>
+  
+**Business Value:**
+
+Encouraging users who review and contribute to the system using special offers and freebies can really contribute to better performance of the recommendation engine. 
+The user-business interaction matrix used in the recommendation algorithm is extremely sparse. In our case 99.4% sparse. Which means there are several million restaurants and several million orders happening everyday. But only a very small percentage of users rate their experience. So there is basically a lot of fill in the blanks. As reviews start pouring in, the model can learn better and achieve better performance and personalization.
+  
+**The Restaurants with the Most Customer Traffic**
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/top10restaurantsbyrating.png" width = 700><p>
+  
+This is usually not very useful during modeling. But can be very useful during hypothesis and A/B testing.
+
+**Most Valuable Patrons of a Particular Restaurant**
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/mvp.png" width = 700><p>
+  
+**Business Value:**
+Insights like these can help  business owners reinvent the aspect of customer relationship.
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
   
   
 
