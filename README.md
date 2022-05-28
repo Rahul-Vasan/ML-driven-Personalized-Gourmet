@@ -157,6 +157,56 @@ Insights like these can help  business owners reinvent the aspect of customer re
    
  <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/wordcloud.png" width = 700><p>  
    
+ <a id='evaluation'></a>  
+ ## Evaluation Metrics
+   
+ We will be evaluating the performance of our model based on the following techniques,
+ 1) Straightforward accuracy calculation
+ 2) Precision, Recall, F score @ k
+ 3) ROC and AUC curve
+ 4) RMSE trends with various hyperparameters
+   
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/accuracy.png" width = 700><p>  
+  
+ Is this a good estimate? No it isn’t. Why?
+
+ Let’s find how skewed the dataset is,
+   
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/skewedness.png" width = 700><p> 
+   
+ Since the training data contains 69% positive labels. Even if we classify every restaurant in the system as a possible recommendation(positive label) then the      accuracy will go up to  69 %. So usually its not a good idea to evaluate a skewed training set using accuracy. Thats why we move towards precision, recall and F0.5    score.
+   
+ <p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/prf_wr_thresholds.png" width = 700><p>
+   
+I was able to achieve a precision of about 83%. For a recommendation system precision is a lot more important than recall. This is because the precision tries to reduce the false positivity and recall tries to reduce the false negativity. False positives are basically restaurants that the user did not like but the model predicted that he would. And so these restaurants will be displayed as recommendations to the user. However, false negatives ( restaurants that the user liked but the model missed it) are never shown to the users and there is no way that the users would even encounter false negatives in a recommendation system. That is why we emphasize more on precision over recall.
+The above plot basically shows the values of precision and recall for different classification threshold values ranging from 0 to 5 just as the scale of the ratings. Usually the point where the F0.5 score is maximum is chosen as the threshold and it can be seen that the F0.5 score( green line) is maximum for a threshold value 3.5.
+   
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/ROC%20curve.png" width = 700><p>
+  
+Usually on the ROC curve, a significant part of the area under the curve (AUC) should be above the straight line. The straight line indicates equiprobability. Random guesses basically.
+
+It’s good to see that it’s a perfect curve predominantely above the line indicating the model is definitely doing well.
+
+**Regularization parameter VS RMSE**
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/regparam.png" width = 700><p> 
+  
+As it is usually seen in a RMSE VS Regularization parameter plot, for small values of lambda the model tends to overfit and gradually as we increase lambda the error shoots down and after a point, for continuously increasing lambda the model tends to underfit.
+  
+**Maxiters for Gradient Descent VS RMSE**
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/maxiters.png" width = 700><p>
+  
+This is quite unusual. Usually the error is high during the initial iterations and the error goes down and plateaus after a certain number of iterations and after a period starts to increase again. But since this algorithm only has few values to learn from (sparse matrix) a small number of iterations of gradient descent are more than sufficient.
+  
+**Number of Features VS RMSE**
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/rankrmse.png" width = 700><p>
+  
+This clearly indicates that there are not many latent factors among the various restaurants considered in the dataset and trying to introduce more factors only leads to overfitting of data.
+  
+  
+  
    
    
    
