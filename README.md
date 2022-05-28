@@ -205,9 +205,46 @@ This is quite unusual. Usually the error is high during the initial iterations a
   
 This clearly indicates that there are not many latent factors among the various restaurants considered in the dataset and trying to introduce more factors only leads to overfitting of data.
   
+<a id='challenges'></a>  
+## Challenges Faced
+  
+<p align="center"><img src = "https://github.com/Rahul-Vasan/ML-driven-Personalized-Gourmet/blob/main/img/hyperparam.png" width = 700><p>  
+  
+The biggest challenge was during the hyper parameter tuning phase. The model basically takes 4 parameters to fit the model, the regularization parameter, number of latent features, learning rate and the maxiterations for gradient descent. We used the gridsearch feature of pyspark to tune the model. What it does basically is fit the model for all possible combinations of values of these 4 parameters. So since we have 4 different parameters it would be a O(n^4) algorithm. As picture indicates the job ran for around 32 hours, and in the meantime we were facing all kinds of out of memory, out of java heap space and stackoverflow errors. Then after storing intermittent results and restricting the number of disk shuffles by checkpointing previously computed values into HDFS we were finally able to tune our model successfully.  
+  
+<a id='futurescope'></a>   
+## Future Improvements
+  
+There is some scope for improvements in the project as listed:
+1) Creation of a front end and back end to make this project a full fledged, modular and  fully functional dynamic application for users and businesses that would include personalization for the individual parties.
+2) Adding a business statistics module for improvisation of the business and visualizations of  the trend over time.
+3) A module to identify the most valuable customer to extend some kind of customer benefits that would be beneficial for the business growth.
+4) Extending the sentiment analysis technique to remove abusive comments to ensure a safe space for the customers of all age groups and the mental health of the business owners.
+5) Also the algorithm can be modified for faster and more personalized recommendations.
+6) Technologies like ETL, Kafka, and effective caching mechanisms such as Redis and popular text search engines such as ElasticSearch can be introduced to handle dynamically changing data.
+  
+<a id='references'></a>
+## References
+
+1) https://link.springer.com/chapter/10.1007/978-3-642-01187-0_3
+2) https://journalofbigdata.springeropen.com/articles/10.1186/s40537-017-0083-6
+3) https://engineeringblog.yelp.com/2018/05/scaling-collaborative-filtering-with-pyspark.html
+4) https://towardsdatascience.com/an-exhaustive-list-of-methods-to-evaluate-recommender-systems-a70c05e121de
+5) https://www.proquest.com/docview/2656424902?pq-origsite=gscholar&fromopenview=true
+6) https://github.com/statisticianinstilettos/recmetrics
+7) https://www.researchgate.net/publication/221607379_Improving_the_Performance_of_Recommender_System_by_Exploiting_the_Categories_of_Products
+8) https://link.springer.com/article/10.1007/s11257-021-09302-x
+  
+<a id='contact'></a>
+## Contact Me
+  
+| Contact Method |  |
+| --- | --- |
+| Personal Email | rahulvasan30@gmail.com |
+| School Email |   rs7671@nyu.edu |
+| LinkedIn | https://www.linkedin.com/in/rahul-vasan/ |  
   
   
-   
    
    
    
