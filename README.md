@@ -128,7 +128,10 @@ Insights like these can help  business owners reinvent the aspect of customer re
 <a id='algo'></a>
 
 ## Algorithms Used
-%%%%%%%%%Under Construction%%%%%%%%%%
+
+I have taken separate efforts to explain my experience with these algorithms in the following medium post. Please check out if interested.  
+
+**https://medium.com/@rs7671/generating-business-value-using-als-cosine-similarity-and-linear-svm-part-1-daad41825030**
   
  <a id='results'></a> 
  ## Results
@@ -237,6 +240,8 @@ There is some scope for improvements in the project as listed:
   
 <a id='contact'></a>
 ## Contact Me
+
+  Please feel free to contact me for anything in pertinance to the project. 
   
 | Contact Method |  |
 | --- | --- |
